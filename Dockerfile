@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     git \
     vim \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
     build-essential \
     libcairo2 \
     cuda-compiler-12-4 \
