@@ -1,8 +1,8 @@
 import os
 import zipfile
-from pathlib import Path  # added for cog
-import cog  # added for cog
+from pathlib import Path
 from rfdetr import RFDETRBase
+from cog import BasePredictor, Input, Path, BaseModel
 
 def unzip_dataset(zip_path, extract_to):
     if os.path.exists(zip_path):
@@ -25,11 +25,10 @@ def train_model(dataset_dir):
     print(f"Weights saved and zipped as {zip_filename}")
     return zip_filename
 
-class Predictor(cog.Predictor):
+class Predictor(BasePredictor):
     def setup(self):
         pass
 
-    @cog.input("dataset", type=Path, help="Path to the COCO formatted dataset zip file")
     def predict(self, dataset: Path) -> Path:
         dataset_zip = str(dataset)
         dataset_dir = os.path.splitext(dataset_zip)[0]
