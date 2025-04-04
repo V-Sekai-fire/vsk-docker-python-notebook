@@ -31,4 +31,4 @@ jobs:
       - name: Push to Replicate
         if: github.ref == 'refs/heads/main'
         run: |
-          cog push r8.im/fire/v-sekai.mediapipe-labeler
+          cog push r8.im/fire/rf-detr-detection
