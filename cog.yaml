@@ -1,0 +1,13 @@
+---
+build:
+    gpu: true
+    system_packages:
+        - gcc
+        - g++
+    python_version: '3.11'
+    python_packages:
+        - onnxruntime
+        - jupyter
+        - deepspeed
+
+predict: predict.py:Predictor
